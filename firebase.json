@@ -1,5 +1,6 @@
 {
-  "hosting": [{
+  "hosting": [
+    {
       "target": "main",
       "public": "frontend/main/dist",
       "ignore": [
