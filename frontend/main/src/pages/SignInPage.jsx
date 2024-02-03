@@ -1,7 +1,18 @@
-/* eslint-disable react/prop-types */
-import SignInWithOAuthProviderButton from "../../../../components/SignInWithOAuthProviderButton"
+import SignInWithOAuthProviderButton from "../../../components/SignInWithOAuthProviderButton"
 
-export default function SignUpForm() {
+
+export default function SignInPage() {
+    return (
+        <section className="hero is-fullheight">
+            <div className="hero-body">
+                <SignInForm />
+            </div>
+        </section>
+    )
+}
+
+
+function SignInForm() {
     return (
         <div className="container">
             <div className="columns is-mobile is-centered">
