@@ -1,8 +1,9 @@
 {
-  "name": "app",
+  "name": "club",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "workspaces": ["frontend/club"],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
