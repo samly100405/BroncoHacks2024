@@ -1,10 +1,11 @@
-import SignUpForm from "./SignUpForm"
+import SignInForm from "./SignInForm";
 
-export default function SignUpPage() {
+
+export default function SignInPage() {
     return (
         <section className="hero is-fullheight">
             <div className="hero-body">
-                <SignUpForm />
+                <SignInForm />
             </div>
         </section>
     )
