@@ -10,7 +10,7 @@ export default function FormInput(props) {
 
     return (
         <div className="field">
-            <div className="columns is-mobile">
+            <div className="columns is-mobile mb-2 mt-4">
                 <div className="column is-narrow">
                     <label htmlFor={props.id} className="label">{props.label}</label>
                 </div>
@@ -24,7 +24,7 @@ export default function FormInput(props) {
                     )}
                 </div>
             </div>
-            <div className="control has-background-warning">
+            <div className="control">
                 <input 
                     id={props.id} 
                     type={props.type} 

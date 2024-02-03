@@ -4,6 +4,8 @@ import { FormProvider } from "react-hook-form";
 import FormButton from "./FormButton";
 import { BIO_VALIDATION, EMAIL_OPTIONAL_VALIDATION, EMAIL_REQUIRED_VALIDATION, GRAD_YEAR_VALIDATION, NAME_VALIDATION } from "../utils/validationPresets";
 import { CURRENT_YEAR } from "../utils/misc";
+import { GroupedMultiselectDropdown } from "./MultiselectDropdown";
+import { INTERESTS_OPTIONS } from "../utils/interestsData";
 
 export default function UserProfileForm() {
     const methods = useForm();
@@ -67,6 +69,11 @@ export default function UserProfileForm() {
                                     id="grad-year-input"
                                     placeholder="ex. 2027"
                                     validation={GRAD_YEAR_VALIDATION}
+                                />
+
+                                <GroupedMultiselectDropdown 
+                                    label="Interests"
+                                    options={INTERESTS_OPTIONS}
                                 />
                             </div>
 
