@@ -21,10 +21,21 @@ export const EMAIL_VALIDATION = {
     },
 }
 
+export const BIO_VALIDATION = {
+    required: {
+        value: false,
+        message: 'Optional',
+    },
+    maxLength: {
+        value: 200,
+        message: '200 characters max',
+    },
+}
+
 export const DESC_VALIDATION = {
     required: {
         value: true,
-        message: 'required',
+        message: 'Required',
     },
     maxLength: {
         value: 200,
