@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form"
 import FormInput from "./FormInput"
 import { FormProvider } from "react-hook-form";
 import FormButton from "./FormButton";
+import { EMAIL_VALIDATION } from "../utils/validationPresets";
 
 export default function UserProfileForm() {
     const methods = useForm();
@@ -30,13 +31,13 @@ export default function UserProfileForm() {
                                 placeholder="******"
                                 validation={{
                                     required: {
-                                      value: true,
-                                      message: '*required',
-                                    },
-                                    minLength: {
-                                      value: 6,
-                                      message: 'min 6 characters long',
-                                    },
+                                        value: true,
+                                        message: '*required',
+                                      },
+                                      minLength: {
+                                        value: 6,
+                                        message: 'min 6 characters long',
+                                      },
                                 }}
                             />
                             <FormInput
@@ -44,6 +45,7 @@ export default function UserProfileForm() {
                                 type="email"
                                 id="student-email-input"
                                 placeholder="xyz@cpp.edu"
+                                validation={EMAIL_VALIDATION}
                             />
                             <FormButton
                                 text="Submit"
