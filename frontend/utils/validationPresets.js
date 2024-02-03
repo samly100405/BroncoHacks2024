@@ -9,7 +9,7 @@ export const PASSWORD_VALIDATION = {
       },
 }
 
-export const EMAIL_VALIDATION = {
+export const EMAIL_REQUIRED_VALIDATION = {
     required: {
         value: true,
         message: 'Required',
@@ -21,6 +21,25 @@ export const EMAIL_VALIDATION = {
     },
 }
 
+export const EMAIL_OPTIONAL_VALIDATION = {
+    required: {
+        value: false,
+        message: 'Optional',
+    },
+    pattern: {
+            value:
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        message: 'Please enter a valid email.',
+    },
+}
+
+export const NAME_VALIDATION = {
+    required: {
+        value: true,
+        message: 'Required',
+    },
+}
+
 export const BIO_VALIDATION = {
     required: {
         value: false,
@@ -29,6 +48,21 @@ export const BIO_VALIDATION = {
     maxLength: {
         value: 200,
         message: '200 characters max',
+    },
+}
+
+export const GRAD_YEAR_VALIDATION = {
+    required: {
+        value: true,
+        message: 'Required',
+    },
+    max: {
+        value: new Date().getFullYear() + 10,
+        message: 'Enter a valid year.'
+    },
+    min: {
+        value: 1949,
+        message: 'Enter a valid year.'
     },
 }
 

@@ -30,6 +30,9 @@ export default function FormInput(props) {
                     type={props.type} 
                     placeholder={props.placeholder}
                     className="input"
+                    min={props.min || ""}
+                    max={props.max || ""}
+                    defaultValue={props.defaultValue || ""}
                     {...register(props.label, props.validation)}
                 />
             </div>
