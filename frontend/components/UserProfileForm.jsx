@@ -15,7 +15,7 @@ export default function UserProfileForm() {
     return (
         <div className="container">
             <div className="columns is-centered">
-                <div className="column is-5-tablet is-4-desktop is-3-widescreen">
+                <div className="column is-5-tablet is-5-desktop is-5-widescreen">
                     <FormProvider {...methods}>
                         <form action=""
                             onSubmit={e => e.preventDefault()}
