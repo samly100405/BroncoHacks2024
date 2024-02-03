@@ -1,15 +1,18 @@
 import { useState } from "react";
 import UserAuthField from "./UserAuthField";
+import { registerUserWithEmailAndPassword } from "../../../../../controllers/main/auth";
 
 export default function SignUpForm() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [displayName, setDisplayName] = useState('');
+  
 
-    const submit = (e) => {
+    function submit(e) {
         e.preventDefault();
-
+        
+        registerUserWithEmailAndPassword(email, password, displayName)
     }
 
     return (
@@ -17,12 +20,12 @@ export default function SignUpForm() {
             <div className="columns is-centered">
                 <div className="column is-5-tablet is-4-desktop is-3-widescreen">
                     <h1 className="title">Create Student Account</h1>
-                    <form action={submit} className="box">
-                        <UserAuthField
+                    <form className="box">
+                        <UserAuthField 
                             type="text"
                             label="Name"
                             value={displayName}
-                            onChange={setDisplayName}
+                            onChange={e => setDisplayName(e.target.value)}
                             placeholder="Bob Smith"
                             required
                         />
@@ -30,7 +33,7 @@ export default function SignUpForm() {
                             type="email"
                             label="Email"
                             value={email}
-                            onChange={setEmail}
+                            onChange={e => setEmail(e.target.value)}
                             placeholder="asdf@example.com"
                             required
                         />
@@ -38,11 +41,11 @@ export default function SignUpForm() {
                             type="password"
                             label="Password"
                             value={password}
-                            onChange={setPassword}
+                            onChange={e => setPassword(e.target.value)}
                             placeholder="********"
                             required
                         />
-                        <button type="submit" className="button is-primary mr-5">Create User</button>
+                        <button type="button" onClick={submit} className="button is-primary mr-5">Create User</button>
                     </form>
                 </div>
             </div>

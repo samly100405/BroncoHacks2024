@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
+
 export default function UserAuthField(props) {
+
     return (
         <div className="field">
             <label htmlFor="" className="label">{props.label}</label>
@@ -7,7 +9,7 @@ export default function UserAuthField(props) {
                 <input className="input"
                     type={props.type} 
                     value={props.value}
-                    onChange={props.onChange}
+                    onChange={e => props.onChange(e)}
                     placeholder={props.placeholder}
                     required
                 />

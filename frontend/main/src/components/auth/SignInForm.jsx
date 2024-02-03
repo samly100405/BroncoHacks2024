@@ -16,12 +16,12 @@ export default function SignInForm() {
             <div className="columns is-centered">
                 <div className="column is-5-tablet is-4-desktop is-3-widescreen">
                     <h1 className="title">Student Sign In</h1>
-                    <form action={submit} className="box">
+                    <form className="box">
                         <UserAuthField
                             type="email"
                             label="Email"
                             value={email}
-                            onChange={setEmail}
+                            onChange={e => setEmail(e.target.value)}
                             placeholder="asdf@example.com"
                             required
                         />
@@ -29,11 +29,11 @@ export default function SignInForm() {
                             type="password"
                             label="Password"
                             value={password}
-                            onChange={setPassword}
+                            onChange={e => setPassword(e.target.value)}
                             placeholder="********"
                             required
                         />
-                        <button type="submit" className="button is-primary mr-5">Sign In</button>
+                        <button type="button" onClick={submit} className="button is-primary mr-5">Sign In</button>
                     </form>
                 </div>
             </div>
