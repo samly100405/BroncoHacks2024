@@ -6,17 +6,18 @@ import './index.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faGoogle, faMicrosoft, faFontAwesome } from '@fortawesome/free-brands-svg-icons'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import CreateUserProfilePage from './pages/CreateUserProfilePage.jsx'
-import SignInPage from './pages/SignInPage.jsx'
+import SignInPage from './pages/SignInPage.jsx' 
 
 library.add(fas, faMicrosoft, faGoogle, faGithub, faFontAwesome);
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div className="non">404</div>,
+    element: <Navigate to="/sign-in"/>,
+    errorElement: <Navigate to="/sign-in"/>,
   },
   {
     path: "/sign-in",
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/create-user-profile",
-    element: <CreateUserProfilePage />
+    element: <CreateUserProfilePage />,
   }
 ]);
 

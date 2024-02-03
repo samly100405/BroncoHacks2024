@@ -22,10 +22,17 @@ export default function SignInWithOAuthProviderButton(props) {
         default:
             console.log(provider.toLowerCase() + " is not available")
     }
+
+
+
+    const handleClick = (e) => {
+        e.preventDefault();
+        signIn(e)
+    }
     return (
         <div className="field">
             <div className="control ">
-                <button className="button" onClick={(e) => signIn(e)}>
+                <button className="button" onClick={handleClick}>
                 <FontAwesomeIcon icon={"fa-brands fa-" + icon} className="mr-2"/>
                     Sign In With {provider}
                 </button>
