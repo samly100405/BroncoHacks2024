@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "broncohacks2024"
-  }
+  },
+  "targets": {
+    "broncohacks2024": {
+      "hosting": {
+        "main": [
+          "broncohacks2024"
+        ],
+        "club": [
+          "clubs-broncohacks2024"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
