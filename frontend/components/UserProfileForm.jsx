@@ -24,10 +24,20 @@ export default function UserProfileForm() {
                         >
                     
                             <FormInput
-                                label="Full Name"
-                                type="text"
-                                id="name-input"
-                                placeholder="ex. Bob Smith"
+                                label="Password"
+                                type="password"
+                                id="password-input"
+                                placeholder="******"
+                                validation={{
+                                    required: {
+                                      value: true,
+                                      message: '*required',
+                                    },
+                                    minLength: {
+                                      value: 6,
+                                      message: 'min 6 characters long',
+                                    },
+                                }}
                             />
                             <FormInput
                                 label="Student Email"

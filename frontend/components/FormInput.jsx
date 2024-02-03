@@ -30,12 +30,7 @@ export default function FormInput(props) {
                     type={props.type} 
                     placeholder={props.placeholder}
                     className="input"
-                    {...register(props.label, {
-                        required: {
-                          value: true,
-                          message: '*required',
-                        },
-                    })}
+                    {...register(props.label, props.validation)}
                 />
             </div>
         </div>
