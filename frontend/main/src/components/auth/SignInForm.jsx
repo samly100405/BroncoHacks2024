@@ -1,5 +1,6 @@
 import { useState } from "react";
 import UserAuthField from "./UserAuthField";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function SignInForm() {
 
@@ -8,7 +9,7 @@ export default function SignInForm() {
 
     const submit = (e) => {
         e.preventDefault();
-        
+        signInWithEmailAndPassword(email, password);
     }
 
     return (

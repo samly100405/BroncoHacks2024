@@ -1,6 +1,6 @@
 import { useState } from "react";
 import UserAuthField from "./UserAuthField";
-import { registerUserWithEmailAndPassword } from "../../../../../controllers/main/auth";
+import { registerUser } from "../../../../../controllers/main/auth";
 
 export default function SignUpForm() {
 
@@ -12,7 +12,10 @@ export default function SignUpForm() {
     function submit(e) {
         e.preventDefault();
         
-        registerUserWithEmailAndPassword(email, password, displayName)
+        registerUser(email, password, displayName)
+        .catch((error) => {
+            console.error(error);
+        })
     }
 
     return (
@@ -26,7 +29,7 @@ export default function SignUpForm() {
                             label="Name"
                             value={displayName}
                             onChange={e => setDisplayName(e.target.value)}
-                            placeholder="Bob Smith"
+                            placeholder="ex. Bob Smith"
                             required
                         />
                         <UserAuthField
